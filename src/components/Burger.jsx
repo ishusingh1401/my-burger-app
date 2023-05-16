@@ -69,10 +69,11 @@ export default function Burger() {
     <div>
       <h1 className="header">Zingy Burger Maker</h1>
       <div className="burger-top"></div>
-      {myComplexState.onion > 0 ? <div className="ing-onion"></div> : null}
-      {myComplexState.lettuce > 0 ? <div className="ing-lettuce"></div> : null}
-      {myComplexState.tomato > 0 ? <div className="ing-tomato"></div> : null}
-      {myComplexState.cheese > 0 ? <div className="ing-cheese"></div> : null}
+      {myComplexState.onion>0?[...Array(myComplexState.onion)].map((e, i) => <div className="ing-onion" key = {i}></div>):null}
+      {myComplexState.lettuce>0?[...Array(myComplexState.lettuce)].map((e, i) => <div className="ing-lettuce" key = {i}></div>):null}
+      {myComplexState.tomato>0?[...Array(myComplexState.tomato)].map((e, i) => <div className="ing-tomato" key = {i}></div>):null}
+      {myComplexState.cheese>0?[...Array(myComplexState.cheese)].map((e, i) => <div className="ing-cheese" key = {i}></div>):null}
+      {myComplexState.patty>0?[...Array(myComplexState.patty)].map((e, i) => <div className="ing-patty" key = {i}></div>):null}
       <div className="burger-bottom"></div>
       <p className="header1">Lettuce</p>
       <div className="header1">
@@ -83,15 +84,15 @@ export default function Burger() {
           Add
         </button>
         <button
-          className="btn-delete"
+          className="btn-delete"  disabled = {myComplexState.lettuce < 1}
           onClick={() => dispatch({type:"remove", ingredient:"lettuce"})}
         >
           Remove
         </button>
       </div>
 
-      <p>Tomato</p>
-      <div className="">
+      <p className="header1">Tomato</p>
+      <div className="header1">
         <button
           className="btn-add"
           onClick={() => dispatch({type:"add", ingredient:"tomato"})}
@@ -99,15 +100,15 @@ export default function Burger() {
           Add
         </button>
         <button
-          className="btn-delete"
+          className="btn-delete"  disabled = {myComplexState.tomato < 1}
           onClick={() => dispatch({type:"remove", ingredient:"tomato"})}
         >
           Remove
         </button>
       </div>
 
-      <p>Patty</p>
-      <div className="">
+      <p className="header1">Patty</p>
+      <div className="header1">
         <button
           className="btn-add"
           onClick={() => dispatch({type:"add", ingredient:"patty"})}
@@ -115,15 +116,15 @@ export default function Burger() {
           Add
         </button>
         <button
-          className="btn-delete"
+          className="btn-delete"  disabled = {myComplexState.patty < 1}
           onClick={() => dispatch({type:"remove", ingredient:"patty"})}
         >
           Remove
         </button>
       </div>
 
-      <p>Cheese</p>
-      <div className="">
+      <p className="header1">Cheese </p>
+      <div className="header1">
         <button
           className="btn-add"
           onClick={() => dispatch({type:"add", ingredient:"cheese"})}
@@ -131,15 +132,15 @@ export default function Burger() {
           Add
         </button>
         <button
-          className="btn-delete"
+          className="btn-delete"  disabled = {myComplexState.cheese < 1}
           onClick={() => dispatch({type:"remove", ingredient:"cheese"})}
         >
           Remove
         </button>
       </div>
 
-      <p>Onion</p>
-      <div className="">
+      <p className="header1">Onion</p>
+      <div className="header1">
         <button
           className="btn-add"
           onClick={() => dispatch({type:"add", ingredient:"onion"})}
@@ -147,7 +148,7 @@ export default function Burger() {
           Add
         </button>
         <button
-          className="btn-delete"
+          className="btn-delete" disabled = {myComplexState.onion < 1}
           onClick={() => dispatch({type:"remove", ingredient:"onion"})}
         >
           Remove

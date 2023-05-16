@@ -95,3 +95,9 @@
     display: inline-block;
     font-size: 16px;
   }
+
+  .btn-delete:disabled{
+    background:  #4d4c4c;
+    color: #ccc;
+    cursor: no-drop;
+ }
