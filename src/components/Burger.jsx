@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import {useReducer } from "react";
 import "./Burger.css";
 
 export default function Burger() {
@@ -9,45 +9,45 @@ export default function Burger() {
     switch (objWithTypeAndIngredient.ingredient) {
       case "lettuce": {
         if (objWithTypeAndIngredient.type === 'add') {
-          return {lettuce: state.lettuce + 1};
+          return { ...state, lettuce: state.lettuce + 1 };
         } else if (objWithTypeAndIngredient.type === 'remove') {
-          return {lettuce: state.lettuce - 1};
+          return { ...state, lettuce: state.lettuce - 1 };
         }
         break;
       }
 
       case "cheese": {
         if (objWithTypeAndIngredient.type === 'add') {
-          return {cheese: state.cheese + 1};
+          return { ...state, cheese: state.cheese + 1 };
         } else if (objWithTypeAndIngredient.type === 'remove') {
-          return {cheese: state.cheese - 1};
+          return { ...state, cheese: state.cheese - 1 };
         }
         break;
       }
 
       case "tomato": {
         if (objWithTypeAndIngredient.type === 'add') {
-          return {tomato: state.tomato + 1};
+          return { ...state, tomato: state.tomato + 1 };
         } else if (objWithTypeAndIngredient.type === 'remove') {
-          return {tomato: state.tomato - 1};
+          return { ...state, tomato: state.tomato - 1 };
         }
         break;
       }
 
       case "patty": {
         if (objWithTypeAndIngredient.type === 'add') {
-          return {patty: state.patty + 1};
+          return { ...state, patty: state.patty + 1 };
         } else if (objWithTypeAndIngredient.type === 'remove') {
-          return {patty: state.patty - 1};
+          return { ...state, patty: state.patty - 1 };
         }
         break;
       }
 
       case "onion": {
         if (objWithTypeAndIngredient.type === 'add') {
-          return {onion: state.onion + 1};
+          return { ...state, onion: state.onion + 1 };
         } else if (objWithTypeAndIngredient.type === 'remove') {
-          return {onion: state.onion - 1};
+          return { ...state, onion: state.onion - 1 };
         }
         break;
       }
